@@ -80,11 +80,11 @@ public class PatientsAPI extends HttpServlet{
 
 		PatientModel patient = new PatientModel();
 		patient.setPID(Integer.parseInt(paras.get("hidPIDSave").toString()));
-		patient.setPname(paras.get("Pame").toString());
-		patient.setGender(paras.get("Gender").toString());
-		patient.setAge(Integer.parseInt(paras.get("Age").toString()));
-		patient.setBlood_group(paras.get("Blood_group").toString());
-		patient.setPcontact(paras.get("Pcontact").toString());
+		patient.setPname(paras.get("pName").toString());
+		patient.setGender(paras.get("gender").toString());
+		patient.setAge(Integer.parseInt(paras.get("age").toString()));
+		patient.setBlood_group(paras.get("bg").toString());
+		patient.setPcontact(paras.get("contact").toString());
 
 		String output = patientcontroller.updatePatient(patient);
 		response.getWriter().write(output);
@@ -96,6 +96,8 @@ public class PatientsAPI extends HttpServlet{
 		String output = patientcontroller.deletePatient(paras.get("PID").toString());
 		response.getWriter().write(output);
 	}
+	
+	
 
 
 	

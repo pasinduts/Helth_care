@@ -97,7 +97,7 @@ public class PatientController {
 				output += "<td>" + Pcontact + "</td>";
 
 				// buttons
-				output += "<td><input name='btnUpdate' type='button' value='Update' class='btnUpdate btn btn-secondary'></td> <td><input name='btnRemove' type='button' value='Remove' class='btnRemove btn btn-danger' data-PID='"	+ PID + "'>" + "</td></tr>";
+				output += "<td><input name='btnUpdate' type='button' value='Update' class='btnUpdate btn btn-secondary'></td> <td><input name='btnRemove' type='button' value='Remove' class='btnRemove btn btn-danger' data-pid='"	+ PID + "'>" + "</td></tr>";
 			}
 			connection.close();
 			// Complete the html table

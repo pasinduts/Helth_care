@@ -11,7 +11,7 @@ $(document).on("click", "#btnSave", function(event) {
 	$("#alertSuccess").hide();
 	$("#alertError").text("");
 	$("#alertError").hide();
-	alert("check");
+	
 	// Form validation-------------------
 	var status = validatePatientForm();
 	if (status != true) {
@@ -58,7 +58,7 @@ function onPatientSaveComplete(response, status) {
 
 // UPDATE==========================================
 $(document).on("click", ".btnUpdate", function(event) {
-	$("#hidPIDUpdate").val($(this).closest("tr").find('#hidPIDUpdate').val());
+	$("#hidPIDSave").val($(this).closest("tr").find('#hidPIDUpdate').val());
 	$("#Pname").val($(this).closest("tr").find('td:eq(0)').text());
 	$("#Gender").val($(this).closest("tr").find('td:eq(1)').text());
 	$("#Age").val($(this).closest("tr").find('td:eq(2)').text());
@@ -71,7 +71,7 @@ $(document).on("click", ".btnRemove", function(event) {
 	$.ajax({
 		url : "PatientsAPI",
 		type : "DELETE",
-		data : "PID=" + $(this).data("PID"),
+		data : "PID=" + $(this).data("pid"),
 		dataType : "text",
 		complete : function(response, status) {
 			onPatientDeleteComplete(response.responseText, status);
